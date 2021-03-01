@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <style>
+         .link{
+             text-decoration: none;
+             color: black;
+         }
+         .link:hover{
+             color: brown;
+         }
+    </style>
+    <%- include('./partials/title.ejs') %> 
+
+<body>
+                <div class="container">
+                    <h1>Our Blogs</h1>
+                </div>
+
+    <%- include('./partials/nav.ejs') %> 
+    <br><br>
+
+                    <div class="container">
+                       
+                        <hr>
+                        <br><br>
+                         <% if(blogs.length > 0){ %> 
+                            
+                                <% blogs.forEach((blog)=>{ %> 
+                                    <a class="link" href="/blogs/<%= blog._id %> ">
+                                        <h3><%= blog.title %> </h3>
+                                        <p><%= blog.snippet %> </p>
+                                    </a>
+                                   
+                        
+                                
+                                 <% }) %> 
+                          <% } %> 
+                    </div>
+
+      <%- include('./partials/footer.ejs') %> 
+                
+</body>
+</html>

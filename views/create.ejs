@@ -1,0 +1,52 @@
+<html lang="en">
+    <style>
+        
+        button{
+            border-radius: 2px;
+        }
+        button:hover{
+            color: green;
+        }
+         
+       
+    </style>
+<%- include('./partials/title.ejs') %> 
+</head>
+
+<body>
+   <div class="container">
+       <h1>Create a new Blog</h1>
+       <%- include('./partials/nav.ejs') %> 
+       <br><br>
+       <hr>
+
+       <form action="/blogs" method="POST">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title"  name="title" required>
+          </div>
+          <div class="mb-3">
+            <label for="snippet" class="form-label">Snippet</label>
+            <input type="text" class="form-control" id="snippet"  name="snippet" required>
+          </div>
+
+          <div class="form-floating">
+            <label for="body">My Blog</label><br><br><br>
+            <textarea class="form-control"  id="body" style="height: 100px" name="body" required>
+            </textarea>
+            
+          </div>
+            <br>
+        
+            <button>Submit</button>
+        
+
+        </form>
+       
+
+   </div>
+
+    
+<%- include('./partials/footer') %> 
+</html>
